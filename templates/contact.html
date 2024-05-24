@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+            label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        </style>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Contact</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
+
+  <!-- Custom styles for this template -->
+  <link href="../static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../static/css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container d-block">
+          <div class="main_nav_menu">
+            <div class="fk_width">
+              <div class="custom_menu-btn">
+                <button onclick="openNav()">
+                  <span class="s-1"> </span>
+                  <span class="s-2"> </span>
+                  <span class="s-3"> </span>
+                </button>
+              </div>
+              <div id="myNav" class="overlay">
+                <div class="overlay-content">
+                  <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  <a class="" href="about.html">About </a>
+                  <a class="" href="gallery.html">Gallery </a>
+                  <a class="" href="mygames.html">My Games </a>
+                  <a class="" href="contact.html">Contact </a>
+                </div>
+              </div>
+            </div>
+            <a class="navbar-brand" href="index.html">
+              <span>
+                Batuhan Uysal
+              </span>
+            </a>
+            <div class="user_option">
+              <form class="form-inline ">
+                <button class="btn  nav_search-btn" type="submit"></button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+
+
+  </div>
+
+{% if message_name %}
+  <!-- client section -->
+<center>
+    <h2>
+        Thanks {{ message_name }} for your message.
+    </h2>
+    <p>
+        I have recived your message. I will get back to you as soon as possible.
+    </p>
+</center>
+  {% endif %}
+
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 ml-auto">
+          <div class="heading_container">
+            <h2>
+              Contact Me
+            </h2>
+            <p>
+              You can contact me from the section below. Do not forget to add your contact information to your message.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="client_container">
+      <div class="client_bg">
+        <img src="../static/images/gallery-bg.png" alt="" />
+      </div>
+      <div class="container">
+        <div class="client_box">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="box b1">
+
+                   <form action="{% url "contact" %}" method="post">
+                       {% csrf_token %}
+                     <label for="fname">Name</label>
+                       <input type="text" id="fname" name="firstname" placeholder="Name" required>
+
+                        <label for="mail">Mail</label>
+                        <input type="text" id="mail" name="mail" placeholder="Mail" required>
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Message." style="height:200px" required></textarea>
+
+                        <input type="submit" value="Submit">
+                    </form>
+
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box b2">
+                <div class="camera_img-box">
+                  <img src="../static/images/lightning.png" alt="" />
+                    <h1 style="margin-top: 10px; margin-left: 120px; color: dimgrey;"> Static River </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+  <!-- info section -->
+
+  <section class="info_section " style="margin-top: 20px;">
+    <div class="info_container layout_padding-top">
+      <div class="container">
+        <div class="heading_container">
+          <h2>
+            Contact Us
+          </h2>
+        </div>
+        <div class="info_main">
+          <div class="row">
+            <div class="col-md-4 col-lg-3">
+              <div class="info_contact ">
+                <a href="#" class="link-box">
+                  <div class="img-box">
+                    <img src="../static/images/location.png" alt="" />
+                  </div>
+                  <div class="detail-box">
+                    <h6>
+                      Location
+                    </h6>
+                  </div>
+                </a>
+                <a href="#" class="link-box">
+                  <div class="img-box">
+                    <img src="../static/images/mail.png" alt="" />
+                  </div>
+                  <div class="detail-box">
+                    <h6>
+                      demo@gmail.com
+                    </h6>
+                  </div>
+                </a>
+                <a href="#" class="link-box">
+                  <div class="img-box">
+                    <img src="../static/images/call.png" alt="" />
+                  </div>
+                  <div class="detail-box">
+                    <h6>
+                      Call +01 1234567890
+                    </h6>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-2 col-lg-3">
+              <div class="info_link-box">
+                <ul>
+                  <li class=" ">
+                    <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="">
+                    <a class="" href="about.html">About </a>
+                  </li>
+                  <li class="">
+                    <a class="" href="gallery.html">Gallery </a>
+                  </li>
+                  <li class="">
+                    <a class="" href="mygames.html">Blog </a>
+                  </li>
+                  <li class="">
+                    <a class="" href="contact.html">Testimonial </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 ">
+              <div class="social_box">
+                <a href="#">
+                  <img src="../static/images/facebook.png" alt="" />
+                </a>
+                <a href="#">
+                  <img src="../static/images/twitter.png" alt="" />
+                </a>
+                <a href="#">
+                  <img src="../static/images/linkedin.png" alt="" />
+                </a>
+                <a href="#">
+                  <img src="../static/images/instagram.png" alt="" />
+                </a>
+                <a href="#">
+                  <img src="../static/images/youtube.png" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <footer class="footer_section ">
+    <div class="container">
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <script src="../static/js/jquery-3.4.1.min.js"></script>
+  <script src="../static/js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="../static/js/custom.js"></script>
+</body>
+
+</html>
