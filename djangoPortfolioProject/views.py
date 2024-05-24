@@ -13,6 +13,7 @@ def mygames(request):
     return render(request, 'mygames.html')
 
 def gallery(request):
+    
     return render(request, 'gallery.html')
 
 def contact(request):
